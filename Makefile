@@ -5,7 +5,7 @@ PKG     := ./...
 VERSION ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
 LDFLAGS := -s -w -X main.version=$(VERSION)
 
-.PHONY: all build test vet fmt clean install
+.PHONY: all build test vet fmt clean install dist
 
 all: build
 
@@ -24,5 +24,10 @@ fmt:
 install:
 	go install -trimpath -ldflags "$(LDFLAGS)" .
 
+# Build one release archive for every target the Go toolchain supports.
+dist:
+	go run ./scripts/dist -version $(VERSION) -out dist
+
 clean:
 	rm -f $(BIN)
+	rm -rf dist

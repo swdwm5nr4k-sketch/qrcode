@@ -27,6 +27,32 @@ make build          # produces ./qrcode
 # or simply: go build -o qrcode .
 ```
 
+## Prebuilt binaries
+
+Every [release](https://github.com/buenos-work/qrcode/releases) ships one archive
+per target the Go toolchain supports — 49 GOOS/GOARCH pairs, from `linux/amd64` to
+`wasip1/wasm` and `plan9/386`:
+
+```text
+qrcode_v1.0.0_linux_amd64.tar.gz
+qrcode_v1.0.0_darwin_arm64.tar.gz
+qrcode_v1.0.0_windows_amd64.zip
+...
+checksums.txt
+```
+
+Each archive holds the statically linked binary (no libc, no cgo), the README and
+the licence. Verify a download and unpack it with:
+
+```sh
+sha256sum --check --ignore-missing checksums.txt
+tar xzf qrcode_v1.0.0_linux_amd64.tar.gz
+./qrcode version
+```
+
+Rebuild the whole matrix locally with `make dist VERSION=v1.0.0`; the archives land
+in `dist/`.
+
 ## Usage
 
 ### Encode a text file into QR code images

@@ -1,5 +1,6 @@
 # Go build output
 /qrcode
+/dist/
 /qrcode.exe
 *.test
 coverage.out
