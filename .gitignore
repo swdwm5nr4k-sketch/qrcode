@@ -1,0 +1,15 @@
+# Go build output
+/qrcode
+/qrcode.exe
+*.test
+coverage.out
+
+# Local toolchain and module cache (never committed)
+/.toolchain/
+/.gopath/
+/.gocache/
+/.npm-cache/
+
+# Scratch space used while developing
+/.scratch/
+/tmp/

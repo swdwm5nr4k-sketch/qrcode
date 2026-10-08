@@ -1,0 +1,28 @@
+# Build, test and install the qrcode command.
+
+BIN     := qrcode
+PKG     := ./...
+VERSION ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
+LDFLAGS := -s -w -X main.version=$(VERSION)
+
+.PHONY: all build test vet fmt clean install
+
+all: build
+
+build:
+	go build -trimpath -ldflags "$(LDFLAGS)" -o $(BIN) .
+
+test:
+	go test $(PKG)
+
+vet:
+	go vet $(PKG)
+
+fmt:
+	gofmt -l -w .
+
+install:
+	go install -trimpath -ldflags "$(LDFLAGS)" .
+
+clean:
+	rm -f $(BIN)
