@@ -1,6 +1,6 @@
 # qrcode
 
-![ci](https://github.com/buenos-work/qrcode/actions/workflows/ci.yml/badge.svg)
+![ci](https://github.com/swdwm5nr4k-sketch/qrcode/actions/workflows/ci.yml/badge.svg)
 
 Move a text file from one machine to another through QR code images: a small Go
 command line tool that gzips the text, splits it into ordered chunks, draws one
@@ -15,13 +15,13 @@ PNG per chunk — and puts the text back together from those images.
 ## Install
 
 ```sh
-go install github.com/buenos-work/qrcode@latest
+go install github.com/swdwm5nr4k-sketch/qrcode@latest
 ```
 
 Or build from a checkout:
 
 ```sh
-git clone https://github.com/buenos-work/qrcode.git
+git clone https://github.com/swdwm5nr4k-sketch/qrcode.git
 cd qrcode
 make build          # produces ./qrcode
 # or simply: go build -o qrcode .
@@ -29,14 +29,14 @@ make build          # produces ./qrcode
 
 ## Prebuilt binaries
 
-Every [release](https://github.com/buenos-work/qrcode/releases) ships one archive
+Every [release](https://github.com/swdwm5nr4k-sketch/qrcode/releases) ships one archive
 per target the Go toolchain supports — 49 GOOS/GOARCH pairs, from `linux/amd64` to
 `wasip1/wasm` and `plan9/386`:
 
 ```text
-qrcode_v1.0.0_linux_amd64.tar.gz
-qrcode_v1.0.0_darwin_arm64.tar.gz
-qrcode_v1.0.0_windows_amd64.zip
+qrcode_v1.1.0_linux_amd64.tar.gz
+qrcode_v1.1.0_darwin_arm64.tar.gz
+qrcode_v1.1.0_windows_amd64.zip
 ...
 checksums.txt
 ```
@@ -46,11 +46,11 @@ the licence. Verify a download and unpack it with:
 
 ```sh
 sha256sum --check --ignore-missing checksums.txt
-tar xzf qrcode_v1.0.0_linux_amd64.tar.gz
+tar xzf qrcode_v1.1.0_linux_amd64.tar.gz
 ./qrcode version
 ```
 
-Rebuild the whole matrix locally with `make dist VERSION=v1.0.0`; the archives land
+Rebuild the whole matrix locally with `make dist VERSION=v1.1.0`; the archives land
 in `dist/`.
 
 ## Usage

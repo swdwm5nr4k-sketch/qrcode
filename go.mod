@@ -1,4 +1,4 @@
-module github.com/buenos-work/qrcode
+module github.com/swdwm5nr4k-sketch/qrcode
 
 go 1.23.4
 

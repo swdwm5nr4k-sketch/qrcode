@@ -21,8 +21,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/buenos-work/qrcode/internal/qrgz"
-	"github.com/buenos-work/qrcode/internal/qrpic"
+	"github.com/swdwm5nr4k-sketch/qrcode/internal/qrgz"
+	"github.com/swdwm5nr4k-sketch/qrcode/internal/qrpic"
 )
 
 // version is stamped at build time with -ldflags "-X main.version=...".
