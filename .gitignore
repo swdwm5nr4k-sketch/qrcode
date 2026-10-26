@@ -3,6 +3,7 @@
 /dist/
 /qrcode.exe
 *.test
+*.log
 coverage.out
 
 # Local toolchain and module cache (never committed)
